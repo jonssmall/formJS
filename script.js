@@ -1,4 +1,4 @@
-  function submitForm(e) {
+function submitForm(e) {
     e.preventDefault();
 
     formElement = targetElement(e);

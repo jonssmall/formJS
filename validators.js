@@ -46,7 +46,7 @@ function primeOnly(e) {
 // todo: if each element calls applyValidation for itself, validateForm gets called twice..
 function peasAndCarrots(e) {
     const [peas, carrots] = [$('#peas'), $('#carrots')];
-    
+
     if (peas.value.toLowerCase() === 'peas' && carrots.value.toLowerCase() === 'carrots') {
         peas.setCustomValidity('');
         carrots.setCustomValidity('');
