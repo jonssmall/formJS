@@ -12,55 +12,63 @@
 <body>
     <section class="section">
         <div class="container">
+            <div class="columns">
 
-            <form onsubmit="submitForm(event)" method="POST" id="myForm" novalidate>
+                <div class="column">
+                    <form onsubmit="submitForm(event)" method="POST" id="myForm" novalidate>
 
-                <div class="field">
-                    <label class="label">First Name</label>
-                    <div class="control">
-                        <input oninput="defaultValidate(event)" class="input" type="text" name="firstName" placeholder="Text input"
-                            required>
-                    </div>
-                    <p class="help is-danger" hidden="true"></p>
-                </div>
-
-                <div class="field">
-                    <label class="label">Prime Number</label>
-                    <div class="control">
-                        <input min="1" oninput="primeOnly(event)" class="input" type="number" name="primeNumber" placeholder="Number"
-                            required>
-                    </div>
-                    <p class="help is-danger" hidden="true"></p>
-                </div>
-
-                <div class="field">
-                    <label class="label">Multi-Input</label>
-                    <div class="field-body">
                         <div class="field">
-                            <p class="control is-expanded">
-                                <input id="peas" oninput="peasAndCarrots(event)" name="peas" class="input" type="text" placeholder="Peas" required>                                                            
-                            </p>
+                            <label class="label">First Name</label>
+                            <div class="control">
+                                <input oninput="defaultValidate(event)" class="input" type="text" name="firstName" placeholder="Text input"
+                                    required>
+                            </div>
                             <p class="help is-danger" hidden="true"></p>
                         </div>
+        
                         <div class="field">
-                            <p class="control is-expanded">
-                                <input id="carrots" oninput="peasAndCarrots(event)" name="carrots" class="input" type="text" placeholder="Carrots" required>                                                            
-                            </p>
+                            <label class="label">Prime Number</label>
+                            <div class="control">
+                                <input min="1" oninput="primeOnly(event)" class="input" type="number" name="primeNumber" placeholder="Number"
+                                    required>
+                            </div>
                             <p class="help is-danger" hidden="true"></p>
                         </div>
+        
+                        <div class="field">
+                            <label class="label">Multi-Input</label>
+                            <div class="field-body">
+                                <div class="field">
+                                    <p class="control is-expanded">
+                                        <input id="peas" oninput="peasAndCarrots(event)" name="peas" class="input" type="text" placeholder="Peas" required>                                                            
+                                    </p>
+                                    <p class="help is-danger" hidden="true"></p>
+                                </div>
+                                <div class="field">
+                                    <p class="control is-expanded">
+                                        <input id="carrots" oninput="peasAndCarrots(event)" name="carrots" class="input" type="text" placeholder="Carrots" required>                                                            
+                                    </p>
+                                    <p class="help is-danger" hidden="true"></p>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="field is-grouped">
+                            <div class="control">
+                                <button type="submit" class="button is-link" disabled=true>Submit</button>
+                            </div>
+                        </div>
+        
+                    </form>
+                </div>
+
+                <div class="column">
+                    <div class="content">
+                        <ol id="todo"></ol>
                     </div>
                 </div>
 
-                <div class="field is-grouped">
-                    <div class="control">
-                        <button type="submit" class="button is-link" disabled=true>Submit</button>
-                    </div>
-                </div>
-
-            </form>
-
-            <ol id="todo"></ol>
-
+            </div>
         </div>
     </section>
     <script src="script.js"></script>

@@ -2,14 +2,13 @@ function submitForm(e) {
     e.preventDefault();
 
     formElement = targetElement(e);
-
-    console.log(formElement.elements);
-
     const formData = new FormData(formElement);
-    for (var [key, value] of formData.entries()) { 
-        console.log(key, value);
-    }
+    console.log([...formData.entries()].reduce((acc, e) => {
+        acc[e[0]] = e[1];
+        return acc;
+    }, {}));
 
+    alert('Check console for FormData request object.')
     return false;
 }
 
