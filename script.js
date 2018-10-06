@@ -1,46 +1,28 @@
-const todos = [
-    'Real-time validation',
-    'Submit button disabled until all form fields valid',
-    'Custom validation using constraint API',
-    'Get rid of ugly default validation graphic, but keep element validity property..',
-    'Pop-up the help text on invalid'
-];
-
-function submitForm(e) {
+  function submitForm(e) {
     e.preventDefault();
 
-    console.log(e.target.elements);
+    formElement = targetElement(e);
+
+    console.log(formElement.elements);
+
+    const formData = new FormData(formElement);
+    for (var [key, value] of formData.entries()) { 
+        console.log(key, value);
+    }
 
     return false;
 }
 
-function validateForm(formElement) {
-    console.log(formElement.checkValidity());
-    formElement.querySelector('button[type="submit"]').disabled = !formElement.checkValidity();
+function $ (selector, el) {
+    if (!el) {el = document;}
+    return el.querySelector(selector);
 }
 
-/*
-    nothing custom here, 
-    just need to peel validity from input 
-    and send down usual path
-*/
-function defaultValidate(e) {
-    styleControl(e.target, e.target.checkValidity());
-
-    // todo: conditionally check for sibling <help> and add message?
-
-    validateForm(e.target.form);
+function $$ (selector, el) {
+    if (!el) {el = document;}
+    return el.querySelectorAll(selector);
 }
 
-function styleControl(element, isValid) {
-    element.classList.toggle("is-success", isValid);
-    element.classList.toggle("is-danger", !isValid);
+function targetElement(event) {
+    return event.target;
 }
-
-function $(selector) {
-    return document.querySelector(selector);
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-    $('#todo').innerHTML = todos.map(t => `<li>${t}</li>`).join('');
-});

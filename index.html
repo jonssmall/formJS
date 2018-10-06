@@ -16,28 +16,51 @@
                 <div class="field">
                     <label class="label">First Name</label>
                     <div class="control">
-                        <input oninput="defaultValidate(event)" class="input" type="text" name="firstName" placeholder="Text input" required>
+                        <input oninput="defaultValidate(event)" class="input" type="text" name="firstName" placeholder="Text input"
+                            required>
                     </div>
+                    <p class="help is-danger" hidden="true"></p>
                 </div>
                 <div class="field">
-                    <label class="label">Last Name</label>
+                    <label class="label">Prime Number</label>
                     <div class="control">
-                        <input oninput="defaultValidate(event)" class="input" type="text" name="lastName" placeholder="Text input" required>
+                        <input oninput="primeOnly(event)" class="input" type="number" name="primeNumber" placeholder="Number"
+                            required>
+                    </div>
+                    <p class="help is-danger" hidden="true"></p>
+                </div>
+                <div class="field">
+                    <label class="label">Multi-Input</label>
+                    <div class="field-body">
+                        <div class="field">
+                            <p class="control is-expanded">
+                                <input id="peas" oninput="peasAndCarrots(event)" class="input" type="text" placeholder="Peas">                                                            
+                            </p>
+                            <p class="help is-danger" hidden="true"></p>                            
+                        </div>
+                        <div class="field">
+                            <p class="control is-expanded">
+                                <input id="carrots" oninput="peasAndCarrots(event)" class="input" type="text" placeholder="Carrots">                                                            
+                            </p>
+                            <p class="help is-danger" hidden="true"></p>
+                        </div>
                     </div>
                 </div>
                 <div class="field is-grouped">
                     <div class="control">
                         <button type="submit" class="button is-link" disabled=true>Submit</button>
                     </div>
-                    <div class="control">
+                    <!-- <div class="control">
                         <button type="button" class="button is-text">Cancel</button>
-                    </div>
+                    </div> -->
                 </div>
             </form>
             <ol id="todo"></ol>
         </div>
     </section>
     <script src="script.js"></script>
+    <script src="validators.js"></script>
+    <script src="todos.js"></script>
 </body>
 
 </html>
